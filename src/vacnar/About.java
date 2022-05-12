@@ -46,7 +46,7 @@ public class About extends JFrame {
 		setRootPaneCheckingEnabled(false);
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(300, 150, 450, 300);
+		setBounds(450, 150, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(95, 158, 160));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));

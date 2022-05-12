@@ -115,15 +115,8 @@ public class View_Rec extends JFrame {
 		btnNewButton.setBounds(1246, 0, 104, 49);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
-                int a = JOptionPane.showConfirmDialog(btnNewButton, "Are you sure?");
-                // JOptionPane.setRootFrame(null);
-                if (a == JOptionPane.YES_OPTION) {
-                    dispose();
-                    Login obj = new Login();
-                    obj.setTitle("Login");
-                    obj.setVisible(true);
-                }
+				logout obj = new logout();
+                obj.setVisible(true);
 			}
 		});
 		panel_1.add(btnNewButton);

@@ -21,7 +21,7 @@ import java.awt.Frame;
 import java.awt.Dimension;
 import javax.swing.UIManager;
 
-public class ADD_REC extends JFrame {
+public class edit_rec extends JFrame {
 
 	/**
 	 * 
@@ -70,7 +70,7 @@ public class ADD_REC extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					ADD_REC frame = new ADD_REC();
+					edit_rec frame = new edit_rec();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -82,7 +82,7 @@ public class ADD_REC extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public ADD_REC() {
+	public edit_rec() {
 		setExtendedState(Frame.MAXIMIZED_BOTH);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1400, 750);
@@ -92,6 +92,8 @@ public class ADD_REC extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		
+		
 		
 		JPanel panel = new JPanel();
 		panel.setBounds(0, 0, 1370, 49);
@@ -128,8 +130,20 @@ public class ADD_REC extends JFrame {
 		btnNewButton.setFocusable(false);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				logout obj = new logout();
-                obj.setVisible(true);
+
+                int a = JOptionPane.showConfirmDialog(btnNewButton, "Are you sure?");
+                // JOptionPane.setRootFrame(null);
+                if (a == JOptionPane.YES_OPTION) {
+                    dispose();
+                    Login obj = new Login();
+                    obj.setTitle("Login");
+                    obj.setVisible(true);
+                }
+                //dispose();
+                //Loging obj = new Loging();
+
+                //obj.setTitle("Login again");
+               // obj.setVisible(true);
 			}
 		});
 		panel.add(btnNewButton);
@@ -154,6 +168,16 @@ public class ADD_REC extends JFrame {
 		btnNewButton_1_1.setBorderPainted(false);
 		btnNewButton_1_1.setBackground(new Color(0, 128, 128));
 		
+		JLabel lblNewLabel = new JLabel("UNDER MAINTAIN");
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setHorizontalTextPosition(SwingConstants.CENTER);
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 40));
+		lblNewLabel.setBounds(337, 314, 624, 95);
+		contentPane.add(lblNewLabel);
+		
+		
+		
+		/* ------------------------------------------uncomment to show-----------------------------------------------------------------
 		txtAddRecords = new JTextField();
 		txtAddRecords.setBorder(UIManager.getBorder("ComboBox.border"));
 		txtAddRecords.setBounds(0, 48, 1370, 66);
@@ -506,6 +530,8 @@ public class ADD_REC extends JFrame {
 		label_10.setBounds(782, 512, 23, 26);
 		contentPane.add(label_10);
 		
+		*
+		------------------------------------------remove to show----------------------------------------------------------------- */
 		
 		
 		

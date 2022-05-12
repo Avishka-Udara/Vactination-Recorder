@@ -91,7 +91,7 @@ public class db_error_popup_cant_load extends JFrame {
 			}
 		});
 		
-		JLabel lblNewLabel = new JLabel("New label");
+		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setBorder(UIManager.getBorder("CheckBoxMenuItem.border"));
 		lblNewLabel.setHorizontalTextPosition(SwingConstants.CENTER);
 		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\Avishka Udara\\Documents\\GitHub\\VAC\\src\\vacnar\\de.jpeg"));

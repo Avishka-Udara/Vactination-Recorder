@@ -115,6 +115,8 @@ public class Load extends JFrame {
 		text_1.setBounds(10, 274, 240, 23);
 		contentPane.add(text_1);
 		
+		
+		
 		JLabel loadlable = new JLabel("LOADING");
 		loadlable.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
 		loadlable.setHorizontalAlignment(SwingConstants.RIGHT);
@@ -125,6 +127,8 @@ public class Load extends JFrame {
 		loadlable.setIcon(new ImageIcon("C:\\Users\\Avishka Udara\\Documents\\GitHub\\VAC\\src\\vacnar\\load.jpeg"));
 		loadlable.setFont(new Font("Calibri Light", Font.BOLD, 15));
 		contentPane.add(loadlable);
+		
+		
 		
 		
 		
