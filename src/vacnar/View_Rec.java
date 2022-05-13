@@ -12,18 +12,13 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import java.awt.Frame;
-import javax.swing.JScrollBar;
-import java.awt.FlowLayout;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
 import java.awt.ComponentOrientation;
 import java.awt.Rectangle;
-import javax.swing.border.CompoundBorder;
 
 public class View_Rec extends JFrame {
 
@@ -148,7 +143,6 @@ public class View_Rec extends JFrame {
             Connection connection1 = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/vacdb","root", "");
 
             PreparedStatement st = (PreparedStatement) connection1.prepareStatement("Select * from records");
-            int height = 38;
             ResultSet rs = st.executeQuery();
             int x = 0;
             while (rs.next()) {

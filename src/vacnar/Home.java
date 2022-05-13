@@ -6,9 +6,6 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-
-import com.mysql.cj.xdevapi.Statement;
-
 import java.awt.Color;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -21,10 +18,7 @@ import java.awt.event.ActionEvent;
 import java.awt.Font;
 import java.awt.Frame;
 import javax.swing.JLabel;
-import javax.swing.JProgressBar;
-import javax.swing.ImageIcon;
 import javax.swing.SwingConstants;
-import java.awt.ComponentOrientation;
 import java.awt.Cursor;
 import javax.swing.JTextField;
 
@@ -241,7 +235,7 @@ public class Home extends JFrame {
             ResultSet rs = st.executeQuery();
             while (rs.next()) {
             	
-            	String NO = rs.getString("NO");	
+            	rs.getString("NO");	
     			x++;
           } 
         } catch (SQLException sqlException) {
@@ -275,7 +269,7 @@ public class Home extends JFrame {
             
             ResultSet rs = st.executeQuery();
             while (rs.next()) {
-            	String snd = rs.getString("2nddose");
+            	rs.getString("2nddose");
             	y++;
             	
           } 
@@ -309,7 +303,7 @@ public class Home extends JFrame {
             PreparedStatement st = (PreparedStatement) connection1.prepareStatement("Select 3rddose from records where 3rddose IN ('Pfizer','Sputnic V','Sinopharm','Sinovac','Moderna','Covishield','Covaxin','Astrazenica')");
             ResultSet rs = st.executeQuery();
             while (rs.next()) {
-            	String snd = rs.getString("3rddose");
+            	rs.getString("3rddose");
             	z++;
             	
           } 
@@ -387,7 +381,7 @@ public class Home extends JFrame {
 		JButton btnNewButton_1_1_1 = new JButton("Edit Record");
 		btnNewButton_1_1_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				edit_rec edr = new edit_rec();
+				edit_rec edr = new edit_rec(sz, sz, sz, sz, sz, sz, sz, sz, sz, sz, sz, sz, sz, sz, sz, sz, sz, sz);
 				edr.setVisible(true);
 				dispose();
 			}

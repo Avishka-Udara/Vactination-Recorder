@@ -2,7 +2,6 @@ package vacnar;
 import java.awt.Cursor;
 import java.awt.EventQueue;
 import java.awt.Font;
-import java.sql.Connection;
 import java.sql.DriverManager;
 
 import javax.swing.JFrame;
@@ -40,7 +39,6 @@ public class Load extends JFrame {
 		/* Create and display the form */
         Load load = new Load();
         load.setVisible(true);
-        int x = 0;
         try
         {
             for(int i = 0; i < 100; i++)
@@ -51,9 +49,8 @@ public class Load extends JFrame {
             try
                 {
                     Class.forName("com.mysql.jdbc.Driver");
-                    Connection con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/vacdb", "root", "");
+                    DriverManager.getConnection("jdbc:mysql://localhost:3306/vacdb", "root", "");
                     load.setVisible(false);
-                    x=1;
                     load.setOpacity(0.0f);
                     System.out.println("connected");
                     Login log = new Login();

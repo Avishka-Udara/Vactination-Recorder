@@ -1,6 +1,5 @@
 package vacnar;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
@@ -19,13 +18,15 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import javax.swing.JLabel;
-import javax.swing.border.LineBorder;
 import javax.swing.UIManager;
-import javax.swing.DropMode;
 
 
 public class SEARCH_ITEM extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel adrs;
 	private JTextField textField;
 	private JTextField txtName;

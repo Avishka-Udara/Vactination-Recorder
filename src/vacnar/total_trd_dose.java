@@ -20,6 +20,10 @@ import java.sql.SQLException;
 
 public class total_trd_dose extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 
 	/**
@@ -71,7 +75,7 @@ public class total_trd_dose extends JFrame {
             PreparedStatement st = (PreparedStatement) connection1.prepareStatement("Select 3rddose from records where 3rddose='Astrazenica'");
             ResultSet rs = st.executeQuery();
             while (rs.next()) {
-            	String snd = rs.getString("3rddose");
+            	rs.getString("3rddose");
             	ast++;
             	
           } 
@@ -105,7 +109,7 @@ public class total_trd_dose extends JFrame {
             PreparedStatement st = (PreparedStatement) connection1.prepareStatement("Select 3rddose from records where 3rddose='Covaxin'");
             ResultSet rs = st.executeQuery();
             while (rs.next()) {
-            	String snd = rs.getString("3rddose");
+            	rs.getString("3rddose");
             	cox++;
             	
           } 
@@ -141,7 +145,7 @@ public class total_trd_dose extends JFrame {
             PreparedStatement st = (PreparedStatement) connection1.prepareStatement("Select 3rddose from records where 3rddose='Covishield'");
             ResultSet rs = st.executeQuery();
             while (rs.next()) {
-            	String snd = rs.getString("3rddose");
+            	rs.getString("3rddose");
             	cos++;
             	
           } 
@@ -177,7 +181,7 @@ public class total_trd_dose extends JFrame {
             PreparedStatement st = (PreparedStatement) connection1.prepareStatement("Select 3rddose from records where 3rddose='Moderna'");
             ResultSet rs = st.executeQuery();
             while (rs.next()) {
-            	String snd = rs.getString("3rddose");
+            	rs.getString("3rddose");
             	mod++;
             	
           } 
@@ -212,7 +216,7 @@ public class total_trd_dose extends JFrame {
             PreparedStatement st = (PreparedStatement) connection1.prepareStatement("Select 3rddose from records where 3rddose='Pfizer'");
             ResultSet rs = st.executeQuery();
             while (rs.next()) {
-            	String snd = rs.getString("3rddose");
+            	rs.getString("3rddose");
             	pfi++;
             	
           } 
@@ -248,7 +252,7 @@ public class total_trd_dose extends JFrame {
             PreparedStatement st = (PreparedStatement) connection1.prepareStatement("Select 3rddose from records where 3rddose='Sinopharm'");
             ResultSet rs = st.executeQuery();
             while (rs.next()) {
-            	String snd = rs.getString("3rddose");
+            	rs.getString("3rddose");
             	sin++;
             	
           } 
@@ -286,7 +290,7 @@ public class total_trd_dose extends JFrame {
             PreparedStatement st = (PreparedStatement) connection1.prepareStatement("Select 3rddose from records where 3rddose='Sinovac'");
             ResultSet rs = st.executeQuery();
             while (rs.next()) {
-            	String snd = rs.getString("3rddose");
+            	rs.getString("3rddose");
             	sio++;
             	
           } 
@@ -323,7 +327,7 @@ public class total_trd_dose extends JFrame {
             PreparedStatement st = (PreparedStatement) connection1.prepareStatement("Select 3rddose from records where 3rddose='Sputnic V'");
             ResultSet rs = st.executeQuery();
             while (rs.next()) {
-            	String snd = rs.getString("3rddose");
+            	rs.getString("3rddose");
             	spu++;
             	
           } 

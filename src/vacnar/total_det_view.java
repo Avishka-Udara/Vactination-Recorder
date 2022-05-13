@@ -20,6 +20,10 @@ import java.sql.SQLException;
 
 public class total_det_view extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 
 	/**
@@ -71,7 +75,6 @@ public class total_det_view extends JFrame {
             PreparedStatement st = (PreparedStatement) connection1.prepareStatement("Select 1stdose from records where 1stdose='Astrazenica'");
             ResultSet rs = st.executeQuery();
             while (rs.next()) {
-            	String snd = rs.getString("1stdose");
             	ast++;
             	
           } 
@@ -105,7 +108,7 @@ public class total_det_view extends JFrame {
             PreparedStatement st = (PreparedStatement) connection1.prepareStatement("Select 1stdose from records where 1stdose='Covaxin'");
             ResultSet rs = st.executeQuery();
             while (rs.next()) {
-            	String snd = rs.getString("1stdose");
+            	rs.getString("1stdose");
             	cox++;
             	
           } 
@@ -141,7 +144,7 @@ public class total_det_view extends JFrame {
             PreparedStatement st = (PreparedStatement) connection1.prepareStatement("Select 1stdose from records where 1stdose='Covishield'");
             ResultSet rs = st.executeQuery();
             while (rs.next()) {
-            	String snd = rs.getString("1stdose");
+            	rs.getString("1stdose");
             	cos++;
             	
           } 
@@ -177,7 +180,7 @@ public class total_det_view extends JFrame {
             PreparedStatement st = (PreparedStatement) connection1.prepareStatement("Select 1stdose from records where 1stdose='Moderna'");
             ResultSet rs = st.executeQuery();
             while (rs.next()) {
-            	String snd = rs.getString("1stdose");
+            	rs.getString("1stdose");
             	mod++;
             	
           } 
@@ -212,7 +215,7 @@ public class total_det_view extends JFrame {
             PreparedStatement st = (PreparedStatement) connection1.prepareStatement("Select 1stdose from records where 1stdose='Pfizer'");
             ResultSet rs = st.executeQuery();
             while (rs.next()) {
-            	String snd = rs.getString("1stdose");
+            	rs.getString("1stdose");
             	pfi++;
             	
           } 
@@ -248,7 +251,7 @@ public class total_det_view extends JFrame {
             PreparedStatement st = (PreparedStatement) connection1.prepareStatement("Select 1stdose from records where 1stdose='Sinopharm'");
             ResultSet rs = st.executeQuery();
             while (rs.next()) {
-            	String snd = rs.getString("1stdose");
+            	rs.getString("1stdose");
             	sin++;
             	
           } 
@@ -286,7 +289,7 @@ public class total_det_view extends JFrame {
             PreparedStatement st = (PreparedStatement) connection1.prepareStatement("Select 1stdose from records where 1stdose='Sinovac'");
             ResultSet rs = st.executeQuery();
             while (rs.next()) {
-            	String snd = rs.getString("1stdose");
+            	rs.getString("1stdose");
             	sio++;
             	
           } 
@@ -323,7 +326,7 @@ public class total_det_view extends JFrame {
             PreparedStatement st = (PreparedStatement) connection1.prepareStatement("Select 1stdose from records where 1stdose='Sputnic V'");
             ResultSet rs = st.executeQuery();
             while (rs.next()) {
-            	String snd = rs.getString("1stdose");
+            	rs.getString("1stdose");
             	spu++;
             	
           } 

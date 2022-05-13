@@ -1,32 +1,28 @@
 package vacnar;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.EventQueue;
 import java.awt.Dialog.ModalExclusionType;
-import java.awt.Window.Type;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import java.awt.Font;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
-import java.awt.Component;
-import java.awt.Rectangle;
-import java.awt.ComponentOrientation;
-import java.awt.event.KeyEvent;
-import java.awt.SystemColor;
 import javax.swing.SwingConstants;
 import javax.swing.UIManager;
 
 public class db_error_popup_cant_load extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 
 	/**
