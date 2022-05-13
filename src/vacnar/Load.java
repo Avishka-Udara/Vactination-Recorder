@@ -1,7 +1,5 @@
 package vacnar;
-import java.awt.CardLayout;
 import java.awt.Cursor;
-import java.awt.Dialog.ModalExclusionType;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.sql.Connection;

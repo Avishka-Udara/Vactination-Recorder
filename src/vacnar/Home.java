@@ -67,7 +67,7 @@ public class Home extends JFrame {
 		contentPane.setLayout(null);
 		
 		JPanel panel = new JPanel();
-		panel.setBounds(0, 0, 1370, 49);
+		panel.setBounds(0, 0, 1400, 49);
 		panel.setBackground(new Color(0, 128, 128));
 		contentPane.add(panel);
 		panel.setLayout(null);
@@ -98,13 +98,15 @@ public class Home extends JFrame {
 		btnNewButton_2.setFocusable(false);
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-                    dispose();
                     Home hm = new Home();
                     hm.setTitle("Dashboard");
                     hm.setVisible(true);
+                    dispose();
 			}
 		});
 		panel.add(btnNewButton_2);
+		
+		
 		
 		textField = new JTextField();
 		textField.setBorder(null);
@@ -115,29 +117,54 @@ public class Home extends JFrame {
 		JButton btnNewButton_3 = new JButton("SEARCH");
 		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				/*String SEARCHITEM = textField.getText();
-                try {
-                    Connection connection = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/vacdb","root", "");
+				//Create DataBase Coonection and Fetching Records  
+		        try {  
+		            String str = textField.getText();   
+		            Connection con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/vacdb","root", "");
+		            PreparedStatement st = con.prepareStatement("select * from records where Name=?");  
+		            st.setString(1, str);  
+		            //Executing Query  
+		            ResultSet rs = st.executeQuery();  
+		            if (rs.next()) {  
 
-                    PreparedStatement st = (PreparedStatement) connection
-                        .prepareStatement("Select * from records where Name=? and address=? and DOB=? and NIC=? and gender=? and District=? and MOH=? and Serial=? and 1stdose=? and 1ddate=? and 1dbatch=? and 2nddose=? and 2ddate=? and 2dbatch=? and 3rddose=? and 3ddate=? and 3dbatch=? and no=?");
-
-                    st.setString(18, SEARCHITEM);
-                    ResultSet rs = st.executeQuery();
-                    if (rs.next()) {
-                        dispose();
-                        SEARCH_ITEM sh = new SEARCH_ITEM();
-                        sh.setTitle("SEARCH ITEM");
-                        sh.setVisible(true);
-                        JOptionPane.showMessageDialog(btnNewButton, "You have successfully logged in");
-                    } 
-                    else {
-                        JOptionPane.showMessageDialog(btnNewButton, "ITEM CANT FOUND");
-                    }
-                } catch (SQLException sqlException) {
-                    sqlException.printStackTrace();
-                }
-			*/
+		                String Name = rs.getString(1);  
+		                String address = rs.getString(2);  
+		                String DOB = rs.getString(3);  
+		                String NIC = rs.getString(4); 
+		                String gender = rs.getString(5);  
+		                String District = rs.getString(6);  
+		                String MOH = rs.getString(7);  
+		                String Serial = rs.getString(8); 
+		                String fstdose = rs.getString(9);  
+		                String fddate = rs.getString(10);  
+		                String fdbatch = rs.getString(11);  
+		                String snddose = rs.getString(12); 
+		                String sddate = rs.getString(13);  
+		                String sdbatch = rs.getString(14);  
+		                String trddose = rs.getString(15);  
+		                String trddate = rs.getString(16);  
+		                String trdbatch = rs.getString(17);  
+		                String NO = rs.getString(18); 
+		                
+		                dispose();
+		                SEARCH_ITEM search = new SEARCH_ITEM(Name,address,DOB,NIC,gender,District,MOH,Serial,fstdose,fddate,fdbatch,snddose,sddate,sdbatch,trddose,trddate,trdbatch,NO);
+		                search.setTitle("Search");
+		                search.setVisible(true);
+		                
+		                
+		                
+		                //Sets Records in TextFields.  
+		                //tf1.setText(s);  
+		                //tf2.setText(s1);  
+		                //tf3.setText(s2);  
+		                //tf4.setText(s3);  
+		            } else {  
+		                JOptionPane.showMessageDialog(null, "Name not Found");  
+		            }  
+		            //Create Exception Handler  
+		        } catch (Exception ex) {  
+		            System.out.println(ex);  
+		        }  
 			}
 		});
 		
@@ -178,11 +205,10 @@ public class Home extends JFrame {
 		btnNewButton_1.setFocusable(false);
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				dispose();
 				ADD_REC vr = new ADD_REC();
                 vr.setTitle("Add Record");
                 vr.setVisible(true);
-
+                dispose();
 			}
 		});
 		contentPane.add(btnNewButton_1);
@@ -193,10 +219,10 @@ public class Home extends JFrame {
 		btnNewButton_1_1.setBounds(524, 651, 314, 49);
 		btnNewButton_1_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				dispose();
 				View_Rec vr = new View_Rec();
                 vr.setTitle("View Record");
                 vr.setVisible(true);
+                dispose();
 			}
 		});
 		
@@ -363,6 +389,7 @@ public class Home extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				edit_rec edr = new edit_rec();
 				edr.setVisible(true);
+				dispose();
 			}
 		});
 		btnNewButton_1_1_1.setRolloverEnabled(false);
