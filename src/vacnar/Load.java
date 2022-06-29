@@ -119,17 +119,9 @@ public class Load extends JFrame {
 		loadlable.setVerticalTextPosition(SwingConstants.TOP);
 		loadlable.setVerticalAlignment(SwingConstants.TOP);
 		loadlable.setBounds(5, 5, 624, 298);
-		loadlable.setIcon(new ImageIcon("C:\\Users\\Avishka Udara\\Documents\\GitHub\\VAC\\src\\vacnar\\load.jpeg"));
+		loadlable.setIcon(new ImageIcon("C:\\Users\\Avishka Udara\\Documents\\GitHub\\Vactination-Recorder\\src\\vacnar\\load.jpeg"));
 		loadlable.setFont(new Font("Calibri Light", Font.BOLD, 15));
 		contentPane.add(loadlable);
-		
-		
-		
-		
-		
-		
-		
-		
 		
 	};
 }

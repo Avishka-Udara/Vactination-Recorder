@@ -18,6 +18,7 @@ import java.awt.Color;
 import javax.swing.JPasswordField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.Serial;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -28,26 +29,25 @@ import java.awt.event.KeyEvent;
 
 public class Login extends JFrame {
 	
+	@Serial
 	private static final long serialVersionUID = 1L;
-    private JPanel contentPane;
+    private final JPanel contentPane;
     
-	private JTextField textField;
-	private JPasswordField passwordField;
+	private final JTextField textField;
+	private final JPasswordField passwordField;
 
 	/**
 	 * Launch the application.
 	 */
 	
 	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() { 
-			public void run() {
-				try {
-					
-					Login frame = new Login();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
+		EventQueue.invokeLater(() -> {
+			try {
+
+				Login frame = new Login();
+				frame.setVisible(true);
+			} catch (Exception e) {
+				e.printStackTrace();
 			}
 		});
 	}
@@ -78,7 +78,7 @@ public class Login extends JFrame {
         JLabel label = new JLabel();
         label.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
         label.setDisplayedMnemonic(KeyEvent.VK_BEGIN);
-        label.setIcon(new ImageIcon("C:\\Users\\Avishka Udara\\Documents\\GitHub\\VAC\\src\\vacnar\\log.jpeg")); //Sets the image to be displayed as an icon
+        label.setIcon(new ImageIcon("C:\\Users\\Avishka Udara\\Documents\\GitHub\\Vactination-Recorder\\src\\vacnar\\log.jpeg")); //Sets the image to be displayed as an icon
         label.getPreferredSize();
         //label.setBounds(50, 30, size.width, size.height); //Sets the location of the image
         label.setBounds(0, 0, 282, 378);
@@ -102,7 +102,16 @@ public class Login extends JFrame {
 		passwordField = new JPasswordField();
 		passwordField.setBounds(320, 186, 255, 27);
 		contentPane.add(passwordField);
-		
+
+		JLabel lblNewLabel_3 = new JLabel("If you dont have a username and password.?");
+		lblNewLabel_3.setFont(new Font("Tahoma", Font.PLAIN, 10));
+		lblNewLabel_3.setBounds(320, 290, 300, 11);
+		contentPane.add(lblNewLabel_3);
+		JLabel lblNewLabel_4 = new JLabel("please contact the owner");
+		lblNewLabel_4.setFont(new Font("Tahoma", Font.PLAIN, 10));
+		lblNewLabel_4.setBounds(320, 300, 300, 11);
+		contentPane.add(lblNewLabel_4);
+
 		JButton btnNewButton = new JButton("Submit");
 		btnNewButton.setFocusPainted(false);
 		btnNewButton.setFocusCycleRoot(true);
@@ -110,35 +119,32 @@ public class Login extends JFrame {
 		btnNewButton.setForeground(Color.DARK_GRAY);
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		btnNewButton.setBackground(new Color(32, 178, 170));
-		btnNewButton.setBounds(320, 247, 253, 38);btnNewButton.addActionListener(new ActionListener() {
+		btnNewButton.setBounds(320, 247, 253, 38);btnNewButton.addActionListener(e -> {
+			String userName = textField.getText();
+			@SuppressWarnings("deprecation")
+			String password = passwordField.getText();
+			try {
+				Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/vacdb","root", "");
 
-            public void actionPerformed(ActionEvent e) {
-                String userName = textField.getText();
-                @SuppressWarnings("deprecation")
-				String password = passwordField.getText();
-                try {
-                    Connection connection = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/vacdb","root", "");
+				PreparedStatement st = connection
+					.prepareStatement("Select uname, password from usr where uname=? and password=?");
 
-                    PreparedStatement st = (PreparedStatement) connection
-                        .prepareStatement("Select uname, password from usr where uname=? and password=?");
-
-                    st.setString(1, userName);
-                    st.setString(2, password);
-                    ResultSet rs = st.executeQuery();
-                    if (rs.next()) {
-                        dispose();
-                        Home ah = new Home();
-                        ah.setTitle("Welcome");
-                        ah.setVisible(true);
-                        JOptionPane.showMessageDialog(btnNewButton, "You have successfully logged in");
-                    } else {
-                        JOptionPane.showMessageDialog(btnNewButton, "Wrong Username & Password");
-                    }
-                } catch (SQLException sqlException) {
-                    sqlException.printStackTrace();
-                }
-            }
-        });
+				st.setString(1, userName);
+				st.setString(2, password);
+				ResultSet rs = st.executeQuery();
+				if (rs.next()) {
+					dispose();
+					Home ah = new Home();
+					ah.setTitle("Welcome");
+					ah.setVisible(true);
+					JOptionPane.showMessageDialog(btnNewButton, "You have successfully logged in");
+				} else {
+					JOptionPane.showMessageDialog(btnNewButton, "Wrong Username & Password");
+				}
+			} catch (SQLException sqlException) {
+				sqlException.printStackTrace();
+			}
+		});
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("X");
@@ -152,12 +158,10 @@ public class Login extends JFrame {
 		btnNewButton_1.setOpaque(false);
 		btnNewButton_1.setRequestFocusEnabled(false);
 		btnNewButton_1.setBounds(610, 0, 45, 23);
-		btnNewButton_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				  if (JOptionPane.showConfirmDialog( contentPane,"confirm if you Want to Exit","VacNar Loging",
-				            JOptionPane.YES_NO_OPTION)==JOptionPane.YES_OPTION)
-				            System.exit(0);
-			}
+		btnNewButton_1.addActionListener(e -> {
+			  if (JOptionPane.showConfirmDialog( contentPane,"confirm if you Want to Exit","VacNar Loging",
+						JOptionPane.YES_NO_OPTION)==JOptionPane.YES_OPTION)
+						System.exit(0);
 		});
 		contentPane.add(btnNewButton_1);
 	}

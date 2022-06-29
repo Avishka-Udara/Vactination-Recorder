@@ -93,8 +93,7 @@ public class edit_rec extends JFrame {
 	 * @param snddose 
 	 * @param fdbatch 
 	 * @param fddate 
-	 * @param fstdose 
-	 * @param serial 
+	 * @param serial
 	 * @param mOH 
 	 * @param district 
 	 * @param gender 
@@ -468,7 +467,7 @@ public class edit_rec extends JFrame {
 		txtBatch.setBounds(914, 485, 112, 27);
 		adrs.add(txtBatch);
 		
-		txtndDose = new JTextField();
+		txtndDose = new JTextField("-");
 		txtndDose.setVerifyInputWhenFocusTarget(false);
 		txtndDose.setText(snddose);
 		txtndDose.setSelectionColor(new Color(0, 128, 128));
@@ -477,7 +476,7 @@ public class edit_rec extends JFrame {
 		txtndDose.setBounds(430, 523, 138, 27);
 		adrs.add(txtndDose);
 		
-		txtdDate = new JTextField();
+		txtdDate = new JTextField("-");
 		txtdDate.setVerifyInputWhenFocusTarget(false);
 		txtdDate.setText(sddate);
 		txtdDate.setSelectionColor(new Color(0, 128, 128));
@@ -486,7 +485,7 @@ public class edit_rec extends JFrame {
 		txtdDate.setBounds(673, 523, 138, 27);
 		adrs.add(txtdDate);
 		
-		txtdBatch = new JTextField();
+		txtdBatch = new JTextField("-");
 		txtdBatch.setVerifyInputWhenFocusTarget(false);
 		txtdBatch.setText(sdbatch);
 		txtdBatch.setSelectionColor(new Color(0, 128, 128));
@@ -495,7 +494,7 @@ public class edit_rec extends JFrame {
 		txtdBatch.setBounds(914, 523, 112, 27);
 		adrs.add(txtdBatch);
 		
-		txtrdDose = new JTextField();
+		txtrdDose = new JTextField("-");
 		txtrdDose.setVerifyInputWhenFocusTarget(false);
 		txtrdDose.setText(trddose);
 		txtrdDose.setSelectionColor(new Color(0, 128, 128));
@@ -504,7 +503,7 @@ public class edit_rec extends JFrame {
 		txtrdDose.setBounds(430, 561, 138, 27);
 		adrs.add(txtrdDose);
 		
-		txtdDate_1 = new JTextField();
+		txtdDate_1 = new JTextField("-");
 		txtdDate_1.setVerifyInputWhenFocusTarget(false);
 		txtdDate_1.setText(trddate);
 		txtdDate_1.setSelectionColor(new Color(0, 128, 128));
@@ -513,7 +512,7 @@ public class edit_rec extends JFrame {
 		txtdDate_1.setBounds(673, 561, 138, 27);
 		adrs.add(txtdDate_1);
 		
-		txtdBatch_1 = new JTextField();
+		txtdBatch_1 = new JTextField("-");
 		txtdBatch_1.setVerifyInputWhenFocusTarget(false);
 		txtdBatch_1.setText(trdbatch);
 		txtdBatch_1.setSelectionColor(new Color(0, 128, 128));
@@ -522,7 +521,7 @@ public class edit_rec extends JFrame {
 		txtdBatch_1.setBounds(914, 561, 112, 27);
 		adrs.add(txtdBatch_1);
 		
-		txtDistrict = new JTextField();
+		txtDistrict = new JTextField("-");
 		txtDistrict.setVerifyInputWhenFocusTarget(false);
 		txtDistrict.setText(District);
 		txtDistrict.setSelectionColor(new Color(0, 128, 128));
@@ -546,7 +545,7 @@ public class edit_rec extends JFrame {
 		lblNewLabel_1_2_1.setBounds(340, 257, 81, 27);
 		adrs.add(lblNewLabel_1_2_1);
 		
-		txtNo = new JTextField();
+		txtNo = new JTextField("");
 		txtNo.setBackground(UIManager.getColor("Button.background"));
 		txtNo.setVerifyInputWhenFocusTarget(false);
 		txtNo.setText(NO);
@@ -598,10 +597,10 @@ public class edit_rec extends JFrame {
 			            String query1=("UPDATE records "+ 
 			            "SET Name= '"+Name2+"', address= '"+address+"', DOB ='"+ DOB +"',NIC ='"+ nic +"',gender ='"+ gender +"',District ='"+ district +"', MOH ='"+ moh +"', Serial ='"+ serial +"',1stdose ='"+ fd +"',1ddate ='"+ FDD +"',1dbatch ='"+ fbbatch +"',2nddose ='"+ sd +"', 2ddate='"+ SDD +"',2dbatch ='"+ sbbatch+"',3rddose ='"+td+"',3ddate ='"+BDD +"',3dbatch ='"+ tbbatch+"'"
 			            		+ "where Name= '"+Name +"';");
-			            System.out.println("on submit "+Name2+address+DOB+NIC+gender+District+MOH+Serial+fstdose+fddate+fdbatch+snddose+sddate+sdbatch+trddose+trddate+trdbatch+NO);
+			            //System.out.println("on submit "+Name2+address+DOB+NIC+gender+District+MOH+Serial+fstdose+fddate+fdbatch+snddose+sddate+sdbatch+trddose+trddate+trdbatch+NO);
 			            st.executeUpdate(query1);
 			            con.close(); 
-			            SUCCESSFULLY_EDIT se = new SUCCESSFULLY_EDIT();
+			            SUCCESSFULLY_ADD se = new SUCCESSFULLY_ADD();
 		                se.setTitle("SUCCESSFULLY EDIT");
 		                se.setVisible(true);
 		            }

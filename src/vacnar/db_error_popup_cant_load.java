@@ -90,7 +90,7 @@ public class db_error_popup_cant_load extends JFrame {
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setBorder(UIManager.getBorder("CheckBoxMenuItem.border"));
 		lblNewLabel.setHorizontalTextPosition(SwingConstants.CENTER);
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\Avishka Udara\\Documents\\GitHub\\VAC\\src\\vacnar\\de.jpeg"));
+		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\Avishka Udara\\Documents\\GitHub\\Vactination-Recorder\\src\\vacnar\\de.jpeg"));
 		lblNewLabel.setBounds(10, 11, 614, 286);
 		panel.add(lblNewLabel);
 		

@@ -33,7 +33,7 @@ public class SUCCESSFULLY_EDIT extends JFrame {
 			public void run() {
 				try {
 					
-					SUCCESSFULLY_EDIT frame = new SUCCESSFULLY_EDIT();
+					SUCCESSFULLY_ADD frame = new SUCCESSFULLY_ADD();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();

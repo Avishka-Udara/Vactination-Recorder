@@ -104,7 +104,7 @@ public class SEARCH_ITEM extends JFrame {
 	 * @param name 
 	 */
 	public SEARCH_ITEM(String Name, String address, String DOB, String NIC, String gender, String District, String MOH, String Serial, String fstdose, String fddate, String fdbatch, String snddose, String sddate, String sdbatch, String trddose, String trddate, String trdbatch, String NO) {
-		System.out.println(Name+address+DOB+NIC+gender+District+MOH+Serial+fstdose+fddate+fdbatch+snddose+sddate+sdbatch+trddose+trddate+trdbatch+NO);
+		//System.out.println(Name+address+DOB+NIC+gender+District+MOH+Serial+fstdose+fddate+fdbatch+snddose+sddate+sdbatch+trddose+trddate+trdbatch+NO);
 
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

@@ -256,7 +256,7 @@ public class ADD_REC extends JFrame {
 		Choice choice_1 = new Choice();
 		choice_1.setBounds(397, 438, 154, 25);
 		contentPane.add(choice_1);
-
+		choice_1.add("-");
 		choice_1.add("Pfizer");    
 		choice_1.add("Moderna"); 
 		choice_1.add("AstraZeneca"); 
@@ -267,17 +267,17 @@ public class ADD_REC extends JFrame {
 		choice_1.add("Covaxin");
 		
 		
-		txtYyyy = new JTextField();
+		txtYyyy = new JTextField("-");
 		txtYyyy.setBounds(602, 438, 82, 25);
 		contentPane.add(txtYyyy);
 		txtYyyy.setColumns(10);
 		
-		txtMm = new JTextField();
+		txtMm = new JTextField("-");
 		txtMm.setBounds(720, 438, 57, 25);
 		txtMm.setColumns(10);
 		contentPane.add(txtMm);
 		
-		txtDd = new JTextField();
+		txtDd = new JTextField("-");
 		txtDd.setBounds(805, 438, 47, 25);
 		txtDd.setColumns(10);
 		contentPane.add(txtDd);
@@ -286,7 +286,7 @@ public class ADD_REC extends JFrame {
 		label_2_1_1_1_1_1_2.setBounds(881, 438, 61, 25);
 		contentPane.add(label_2_1_1_1_1_1_2);
 		
-		textField_6 = new JTextField();
+		textField_6 = new JTextField("-");
 		textField_6.setBounds(942, 438, 168, 25);
 		textField_6.setColumns(10);
 		contentPane.add(textField_6);
@@ -298,7 +298,7 @@ public class ADD_REC extends JFrame {
 		Choice choice_2 = new Choice();
 		choice_2.setBounds(397, 474, 154, 25);
 		contentPane.add(choice_2);
-		choice_2.add("Pfizer");    
+		choice_2.add("-");
 		choice_2.add("Moderna"); 
 		choice_2.add("AstraZeneca"); 
 		choice_2.add("Sinopharm"); 
@@ -307,17 +307,17 @@ public class ADD_REC extends JFrame {
 		choice_2.add("Covishield");
 		choice_2.add("Covaxin");
 		
-		textField_7 = new JTextField();
+		textField_7 = new JTextField("-");
 		textField_7.setBounds(602, 474, 82, 25);
 		textField_7.setColumns(10);
 		contentPane.add(textField_7);
 		
-		textField_8 = new JTextField();
+		textField_8 = new JTextField("-");
 		textField_8.setBounds(720, 474, 57, 25);
 		textField_8.setColumns(10);
 		contentPane.add(textField_8);
 		
-		textField_9 = new JTextField();
+		textField_9 = new JTextField("-");
 		textField_9.setBounds(805, 474, 47, 25);
 		textField_9.setColumns(10);
 		contentPane.add(textField_9);
@@ -326,7 +326,7 @@ public class ADD_REC extends JFrame {
 		label_2_1_1_1_1_1_2_1.setBounds(881, 474, 61, 25);
 		contentPane.add(label_2_1_1_1_1_1_2_1);
 		
-		textField_10 = new JTextField();
+		textField_10 = new JTextField("-");
 		textField_10.setBounds(942, 474, 168, 25);
 		textField_10.setColumns(10);
 		contentPane.add(textField_10);
@@ -338,7 +338,8 @@ public class ADD_REC extends JFrame {
 		Choice choice_3 = new Choice();
 		choice_3.setBounds(397, 513, 154, 25);
 		contentPane.add(choice_3);
-		choice_3.add("Pfizer");    
+		choice_3.add("-");
+		choice_3.add("Pfizer");
 		choice_3.add("Moderna"); 
 		choice_3.add("AstraZeneca"); 
 		choice_3.add("Sinopharm"); 
@@ -348,17 +349,17 @@ public class ADD_REC extends JFrame {
 		choice_3.add("Covaxin");
 		
 		
-		textField_11 = new JTextField();
+		textField_11 = new JTextField("-");
 		textField_11.setBounds(602, 513, 82, 25);
 		textField_11.setColumns(10);
 		contentPane.add(textField_11);
 		
-		textField_12 = new JTextField();
+		textField_12 = new JTextField("-");
 		textField_12.setBounds(720, 513, 57, 25);
 		textField_12.setColumns(10);
 		contentPane.add(textField_12);
 		
-		textField_13 = new JTextField();
+		textField_13 = new JTextField("-");
 		textField_13.setBounds(805, 513, 47, 25);
 		textField_13.setColumns(10);
 		contentPane.add(textField_13);
@@ -367,7 +368,7 @@ public class ADD_REC extends JFrame {
 		label_2_1_1_1_1_1_2_2.setBounds(881, 513, 61, 25);
 		contentPane.add(label_2_1_1_1_1_1_2_2);
 		
-		textField_14 = new JTextField();
+		textField_14 = new JTextField("-");
 		textField_14.setBounds(942, 513, 168, 25);
 		textField_14.setColumns(10);
 		contentPane.add(textField_14);
@@ -423,7 +424,11 @@ public class ADD_REC extends JFrame {
 		            String query1=("INSERT INTO `records` (`Name`, `address`, `DOB`, `NIC`, `gender`, `District`, `MOH`, `Serial`, `1stdose`, `1ddate`, `1dbatch`, `2nddose`, `2ddate`, `2dbatch`, `3rddose`, `3ddate`, `3dbatch`) "+ 
 		            "VALUES ('"+Name+"','"+address+"','"+  DOBY +"/"+ DOBM +"/" +DOBD + "','" + nic + "','" + gender + "','" + district + "','" + moh + "','" + serial + "','" + fd + "','" + FDY +"/"+ FDM +"/" +FDD + "','" + fbbatch + "','" + sd + "','" + SDY +"/"+ SDM +"/" +SDD + "','" + sbbatch + "','" + td + "','" + BDY +"/"+ BDM +"/" +BDD + "','" + tbbatch + "' ) ");
 		            st.executeUpdate(query1);
-		            conn.close(); 
+		            conn.close();
+					SUCCESSFULLY_ADD se = new SUCCESSFULLY_ADD();
+					se.setTitle("SUCCESSFULLY EDIT");
+					se.setVisible(true);
+
 		        } catch (Exception e1) { 
 		            System.err.println("Got an exception! "); 
 		            System.err.println(e1.getMessage()); 
